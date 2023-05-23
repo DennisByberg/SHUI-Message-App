@@ -1,0 +1,15 @@
+@import "./sass/colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.App {
+  background-color: $darkBlue;
+  color: $white;
+
+  min-height: 100vh;
+}
