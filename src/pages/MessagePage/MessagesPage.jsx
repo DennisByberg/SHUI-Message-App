@@ -4,11 +4,11 @@ import "./MessagesPage.scss";
 import Header from "../../components/Header/Header";
 import MessageCard from "../../components/MessageCard/MessageCard";
 import Footer from "../../components/Footer/Footer";
-//react-redux
+// react-redux
 import { useSelector } from "react-redux";
 
 function MessagesPage() {
-  const { messages } = useSelector((state) => state.messages);
+  const { messages } = useSelector((state) => state.messages); // the message array from redux...
 
   const messagesComponents = messages.map((message) => {
     return (

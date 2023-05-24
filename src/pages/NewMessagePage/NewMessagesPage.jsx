@@ -1,6 +1,6 @@
-// Scss
+// scss
 import "./NewMessagesPage.scss";
-// Components
+// components
 import Header from "../../components/Header/Header";
 import NewMessageForm from "../../components/NewMessageForm/NewMessageForm";
 

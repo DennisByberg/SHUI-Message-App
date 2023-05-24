@@ -10,12 +10,9 @@
 
 .App {
   @include fontFamilyPTSans;
-
   background-color: $darkBlue;
   color: $white;
-
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
 }

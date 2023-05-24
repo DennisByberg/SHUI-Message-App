@@ -2,9 +2,12 @@
 import "./Footer.scss";
 // router
 import { useNavigate } from "react-router-dom";
+// PNG
+import pencilIMG from "/src/assets/pencil.png";
 
 function Footer() {
   const navigate = useNavigate(); // router.
+
   function newMessageClick() {
     navigate("/NewMessages");
   }
@@ -12,7 +15,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div onClick={newMessageClick} className="footer__new-message-container">
-        <img className="footer__pencil" src="../src/assets/pencil.png" />
+        <img className="footer__pencil" src={pencilIMG} />
       </div>
     </footer>
   );
