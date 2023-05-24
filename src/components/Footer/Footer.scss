@@ -1,0 +1,33 @@
+@import "../../sass/colors";
+
+.footer {
+  // border: 1px solid wheat;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #19274abe;
+  backdrop-filter: blur(1px);
+
+  display: flex;
+  justify-content: end;
+
+  &__new-message-container {
+    background-color: $red;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .footer__pencil {
+      filter: invert(1);
+      width: 60px;
+    }
+  }
+}
