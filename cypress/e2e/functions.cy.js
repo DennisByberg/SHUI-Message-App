@@ -1,0 +1,49 @@
+it("should be able to remove a message", () => {
+  //visit right page...
+  cy.visit("http://localhost:5173/");
+  // get ul list...
+  cy.get(".messages-page__ul");
+  // get length of ul...
+  cy.get(".messages-page__ul").find("li").should("have.length", 5);
+  // click on the delete btn...
+  cy.get(".messages-page__ul")
+    .find("li")
+    .eq(0)
+    .find(".message-card__trash")
+    .click();
+  // get length of ul after deleted message...
+  cy.get(".messages-page__ul").find("li").should("have.length", 4);
+});
+
+it("should go to new message page when i press the pencil button", () => {
+  // visit right page...
+  cy.visit("http://localhost:5173/");
+  // pencil click...
+  cy.get(".footer__pencil").click();
+  // check if we are on the right url...
+  cy.url().should("eq", "http://localhost:5173/NewMessages");
+});
+
+it("should be able to add a new message", () => {
+  // visit right page...
+  cy.visit("http://localhost:5173/newMessages");
+  // write some template text in textarea...
+  cy.get(".new-message-form__message-input").type(
+    "This is some random text written by cypress."
+  );
+  // write some template text in username input...
+  cy.get(".new-message-form__writer-input").type("Cypress");
+  // wait a little bit...
+  cy.wait(1000);
+  // click the publish button...
+  cy.get(".new-message-form__add-button").click();
+  // go to the allMessages page...
+  cy.get(".header__home-icon").click();
+  // check if the last message in the ul is the one we added...
+  cy.get(".messages-page__ul")
+    .find("li")
+    .last()
+    .find("p")
+    .eq(2)
+    .should("have.text", "Cypress");
+});

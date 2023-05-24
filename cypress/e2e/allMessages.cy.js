@@ -29,26 +29,4 @@ describe("All Messages", () => {
       .eq(2)
       .should("contain", "Snodden");
   });
-
-  it("should be able to remove a message", () => {
-    // get ul list...
-    cy.get(".messages-page__ul");
-    // get length of ul...
-    cy.get(".messages-page__ul").find("li").should("have.length", 5);
-    // click on the delete btn...
-    cy.get(".messages-page__ul")
-      .find("li")
-      .eq(0)
-      .find(".message-card__trash")
-      .click();
-    // get length of ul after deleted message...
-    cy.get(".messages-page__ul").find("li").should("have.length", 4);
-  });
-
-  it("should go to new message page when i press the pencil button", () => {
-    // pencil click...
-    cy.get(".footer__pencil").click();
-    // check if we are on the right url...
-    cy.url().should("eq", "http://localhost:5173/NewMessages");
-  });
 });
